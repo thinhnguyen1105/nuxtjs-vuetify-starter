@@ -45,6 +45,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/sentry": "^5.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
+    "@nuxtjs/vercel-builder": "^0.21.3",
     "axios": "^0.21.1",
     "lru-cache": "^6.0.0",
     "nuxt": "^2.15.3",
