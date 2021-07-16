@@ -1,38 +1,24 @@
 const isDev = process.env.NODE_ENV !== 'production'
 
 export default {
-  // https://nuxtjs.org/api/configuration-modern
   modern: !isDev,
-
-  // https://nuxtjs.org/api/configuration-head
   head: {
     titleTemplate(title) {
       if (title) {
-        return `${title} - Nuxt PWA Vuetify`
+        return `${title} - IZTeach`
       }
-      return 'Nuxt PWA Vuetify'
+      return 'IZTeach'
     }
   },
-
-  // https://nuxtjs.org/api/configuration-modules
+  loading: {
+    continuos: true
+  },
   modules: [
-    // https://http.nuxtjs.org/
     '@nuxt/http',
-
-    // https://pwa.nuxtjs.org/
-    '@nuxtjs/pwa'
-
+    '@nuxtjs/pwa',
+    '@nuxtjs/axios'
     // https://github.com/nuxt-community/sentry-module
     // "@nuxtjs/sentry",
-
-    // https://github.com/nuxt-community/analytics-module
-    // [
-    //   "@nuxtjs/google-analytics",
-    //   {
-    //     // TODO: Change this id to your Google Analytics ID
-    //     id: process.env.GOOGLE_ANALYTICS
-    //   }
-    // ]
   ],
 
   buildModules: [
