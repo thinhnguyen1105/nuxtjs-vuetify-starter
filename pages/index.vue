@@ -4,6 +4,7 @@
       <div class="text-center">
         <logo />
         <div>{{ host }}</div>
+        <div>{{ vendor }}</div>
       </div>
     </v-col>
   </v-row>
@@ -15,15 +16,13 @@ export default {
   components: {
     Logo
   },
-  asyncData({ req, res, $axios }) {
+  async asyncData({ req, res, $axios }) {
     console.log('req header', req.headers.host)
     const host = req.headers.host
-    // const vendor = await $axios.$get(
-    //   `https://cd30nboy73.execute-api.ap-southeast-1.amazonaws.com/prod/vendor/get-vendor-from-origin`
-    //   // 'https://api.nuxtjs.dev/mountains'
-    // )
-    // console.log('ip', vendor)
-    return { host }
+    const vendor = await $axios.$get(
+      `https://cd30nboy73.execute-api.ap-southeast-1.amazonaws.com/prod/vendor/get-vendor-from-origin?hostname=https://${host}`
+    )
+    return { host, vendor }
   }
   // data() {
   //   return {
