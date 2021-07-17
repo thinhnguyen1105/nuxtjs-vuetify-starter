@@ -1,0 +1,88 @@
+{
+  isDisplayMenuHeaderSetting: [],
+  baitNotifications: [
+    {
+      to: 'https: //netlify.com',
+      id: 1,
+      title: 'tieu de',
+      content: 'noi dung',
+      updatedAt: '2021-01-05'
+    }
+  ],
+  externalScript: [
+    {
+      id: '5416f167-6569-4bed-841b-bec27892c625',
+      text: "<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n" +
+        "new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n" +
+        "j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n" +
+        "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n" +
+        "})(window,document,'script','dataLayer','GTM-KB5VSL3');</script>",
+      position: 'head',
+      title: 'Mã Javascript mới'
+    }
+  ],
+  isCountExceedWatchVideo: null,
+  mobileThemeConfig: { viewData: [
+      [Object
+      ],
+      [Object
+      ]
+    ]
+  },
+  isDisplayZoom: true,
+  isDisplayMenuFooterSetting: [
+    'courseOffline', 'ebook',
+    'activeCourse',  'department',
+    'aboutUs',       'policy',
+    'phoneNumber',   'socialNetwork',
+    'email',         'courseOnline',
+    'event'
+  ],
+  countExceedWatchVideo: '3',
+  currentLanguage: 'vi',
+  isDisplayProfile: true,
+  isDisplayMarketHeader: true,
+  isPermissionZoom: true,
+  themeConfig: {
+    viewData: [
+      [Object
+      ],
+      [Object
+      ],
+      [Object
+      ],
+      [Object
+      ],
+      [Object
+      ],
+      [Object
+      ],
+      [Object
+      ],
+      [Object
+      ]
+    ],
+    themeData: {
+      siteName: 'Lương Thế Vinh',
+      thumbnail: 'https: //online-learning-izteach-3-test-aws-source-bucket.s3-ap-southeast-1.amazonaws.com/resource/documents/23b0bfb0-c00b-11e9-a060-17d3861b7a5b/1614654973509-id_vangogh_thumb.jpg',
+      logo_url: 'https: //online-learning-izteach-3-test-aws-source-bucket.s3-ap-southeast-1.amazonaws.com/resource/documents/23b0bfb0-c00b-11e9-a060-17d3861b7a5b/1622021392758-1597654267479jpeg-jpg.jpg',
+      color_primary: '#5448CB',
+      favicon: 'https: //online-learning-izteach-3-test-aws-source-bucket.s3-ap-southeast-1.amazonaws.com/resource/documents/23b0bfb0-c00b-11e9-a060-17d3861b7a5b/1622021562918-1597654267479jpeg-1-png.png'
+    },
+    currentTheme: { path: '/theme/duong_dai', label: 'Đương đại'
+    },
+    recruitment: [
+      [Object
+      ]
+    ]
+  },
+  isPermissionAccessAllZoom: true,
+  socialNetwork: {
+    youtube: 'https: //www.youtube.com/channel/UC1R1JWCXHzZbSi2iXWYWwKg',
+    instagram: null,
+    tiktok: null,
+    facebook: 'https: //www.facebook.com/'
+  },
+  isDisableRegistration: null,
+  isNotificationBaited: null
+}
