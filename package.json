@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
-    "start": "nuxt-ts start",
+    "start": "nuxt start",
     "generate": "nuxt-ts generate",
     "lint:ts": "eslint --ext .ts,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js && yarn lint:js && yarn lint:style",
@@ -47,7 +47,11 @@
     "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.8.1",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "vue-design-system": "git+https://github.com/viljamis/vue-design-system",
+    "vue": "2.6.12",
+    "vue-server-renderer": "2.6.12",
+    "vue-template-compiler": "2.6.12"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -67,6 +71,8 @@
     "husky": "^4.3.6",
     "lint-staged": "^11.0.0",
     "nuxt-property-decorator": "^2.9.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0"
   }
 }
