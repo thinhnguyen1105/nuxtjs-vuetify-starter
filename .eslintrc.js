@@ -14,6 +14,6 @@ module.exports = {
   plugins: ['prettier', 'vuetify'],
   // add your custom rules here
   rules: {
-    'vuetify/no-deprecated-classes': 'error'
+    'vuetify/no-deprecated-classes': 'error',
   },
 }
