@@ -1,112 +1,45 @@
 <template>
-  <div class="home-page">
-    <Banner v-if="!isLogin" />
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <tab-navigation
-            :tab-type="feedType"
-            :tab-items="tabItems"
-            @on-click-tab="getArticleListByFeed"
-          />
-
-          <article-list-loading v-if="fetchState.pending" />
-
-          <template v-if="!fetchState.pending && !fetchState.error">
-            <article-preview-list
-              :article-list="articleList"
-              @toggle-favorite-article="toggleFavoriteArticleByList"
-            />
-            <pagination :total-count="articleCount" @fetch-data="fetchData" />
-          </template>
-        </div>
-
-        <template v-if="!fetchState.pending && !fetchState.error">
-          <div class="col-md-3">
-            <popular-tag-list
-              :tag-list="tagList"
-              @on-click-tag="getArticleListByTag"
-            />
-          </div>
-        </template>
+  <v-row justify="center" align="center">
+    <v-col cols="12" sm="8" md="6">
+      <div class="text-center">
+        <div>{{ siteName }}</div>
+        <img :src="logo" />
+        <logo />
+        <div>{{ host }}</div>
+        <div>{{ vendor }}</div>
+        <p>Our Url is: {{ $config.baseURL }}</p>
       </div>
-    </div>
-  </div>
+    </v-col>
+  </v-row>
 </template>
 
-<script lang="ts">
-import {
-  computed,
-  defineComponent,
-  toRef,
-  toRefs,
-  useFetch,
-} from '@nuxtjs/composition-api'
-
-import ArticlePreviewList from '@/components/articleList/ArticlePreviewList.vue'
-import ArticleListLoading from '@/components/articleList/ArticleListLoading.vue'
-import PopularTagList from '@/components/articleList/PopularTagList.vue'
-import TabNavigation from '@/components/articleList/TabNavigation.vue'
-import Banner from '@/components/banner/Banner.vue'
-import Pagination from '@/components/common/Pagination.vue'
-
-import { useArticleList, useTag, useUser } from '@/compositions'
-import { feedTypes } from '@/constants'
-
-// TODO: [Vue warn]: Write operation failed: computed value is readonly.
-export default defineComponent({
-  name: 'IndexPage',
+<script>
+import Logo from '~/components/Logo.vue'
+export default {
   components: {
-    ArticlePreviewList,
-    Banner,
-    TabNavigation,
-    Pagination,
-    PopularTagList,
-    ArticleListLoading,
+    Logo
   },
-  setup() {
-    const { isLogin } = useUser()
-    const {
-      state: articleListState,
-      feedType,
-      getArticleList,
-      getFeedArticleList,
-      getArticleListByTag,
-      getArticleListByFeed,
-      toggleFavoriteArticleByList,
-    } = useArticleList()
-    const { state: tagState, getTagList } = useTag()
+  async asyncData({ req, res, $axios, $config }) {
+    console.log($config.baseURL)
+    if (req && req.headers && req.headers.host) {
+      const host = req.headers.host
+      const vendor = await $axios.$get(
+        `https://cd30nboy73.execute-api.ap-southeast-1.amazonaws.com/prod/vendor/get-vendor-from-origin?hostname=https://${host}`
+      )
+      const settings = await $axios.$get(
+        `https://ilx0gvnp3c.execute-api.ap-southeast-1.amazonaws.com/prod/academic/vendor/${vendor.vendorId}`,
+        {
+          headers: {
+            'ol-client-id': vendor.clientId,
+            'ol-vendor-id': vendor.vendorId
+          }
+        }
+      )
+      const siteName = settings.item.learn.themeConfig.themeData.siteName
+      const logo = settings.item.learn.themeConfig.themeData.logo_url
 
-    const fetchData = async (offset = 0) => {
-      if (feedType.value === 'YOUR') {
-        await getFeedArticleList(offset)
-      } else {
-        await getArticleList({ offset })
-      }
-
-      await getTagList()
+      return { host, vendor, logo, siteName }
     }
-
-    const { fetchState } = useFetch(() => fetchData())
-
-    const tabItems = computed(() => {
-      const [, globalFeed] = feedTypes
-
-      return isLogin.value ? feedTypes : [globalFeed]
-    })
-
-    return {
-      fetchState,
-      fetchData,
-      ...toRefs(articleListState),
-      tagList: toRef(tagState, 'tagList'),
-      feedType,
-      tabItems,
-      getArticleListByTag,
-      isLogin,
-      getArticleListByFeed,
-      toggleFavoriteArticleByList,
-    }
-  },
-})
+  }
+}
 </script>

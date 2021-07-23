@@ -2,18 +2,15 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true,
+    node: true
   },
-  extends: [
-    '@nuxtjs/eslint-config-typescript',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
-  ],
-  plugins: ['prettier', 'vuetify'],
-  // add your custom rules here
+  extends: ['@nuxtjs', 'plugin:vue/recommended', 'plugin:prettier/recommended'],
+  plugins: ['vue', 'prettier', 'vuetify'],
   rules: {
-    'vuetify/no-deprecated-classes': 'error',
-  },
+    'no-console': 'off',
+    'no-param-reassign': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'prettier/prettier': 'error',
+    'vuetify/no-deprecated-classes': 'error'
+  }
 }
