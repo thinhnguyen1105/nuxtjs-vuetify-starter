@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "nuxt-ts",
     "build": "nuxt-ts build",
-    "start": "nuxt start",
+    "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint:ts": "eslint --ext .ts,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js && yarn lint:js && yarn lint:style",
