@@ -3,7 +3,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 
 const config: NuxtConfig = {
   modern: !isDev,
-  target: 'static',
+  target: 'server',
   head: {
     title: 'IZTeach',
     meta: [
