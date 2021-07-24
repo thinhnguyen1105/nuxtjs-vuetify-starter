@@ -53,7 +53,6 @@ const config: NuxtConfig = {
   ],
   build: {
     extractCSS: !isDev,
-    babel: { babelrc: true },
   },
   axios: {
     baseURL: 'https://conduit.productionready.io/api/',
