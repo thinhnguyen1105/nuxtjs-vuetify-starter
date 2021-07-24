@@ -1,0 +1,17 @@
+{
+  "plugins": [["@babel/plugin-proposal-private-methods", { "loose": true }]],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
