@@ -53,7 +53,6 @@ import Pagination from '@/components/common/Pagination.vue'
 import { useArticleList, useTag, useUser } from '@/compositions'
 import { feedTypes } from '@/constants'
 
-// TODO: [Vue warn]: Write operation failed: computed value is readonly.
 export default defineComponent({
   name: 'IndexPage',
   components: {
