@@ -39,16 +39,16 @@ export default defineComponent({
       vendorSetting.value = settings.data.item.contact.name
       name.value = vendor
     })
-    title.value = vendorSetting.value
+    title.value = 'Test seo'
     meta.value.push({
       hid: 'ogTitle',
       name: 'og:title',
-      content: vendorSetting.value,
+      content: 'Test seo',
     })
     meta.value.push({
       hid: 'twitterTitle',
       name: 'twitter:title',
-      content: vendorSetting.value,
+      content: 'Test seo',
     })
     return { name, vendorSetting }
   },
