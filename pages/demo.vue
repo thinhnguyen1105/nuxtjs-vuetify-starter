@@ -1,6 +1,11 @@
 <template>
   <div>
     <div>{{ vendor ? vendor : 'Hello' }}</div>
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Button
+    </button>
     <Dialog>The quick brown fox</Dialog>
     <v-app>
       <v-container>
