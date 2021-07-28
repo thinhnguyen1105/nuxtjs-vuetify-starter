@@ -51,7 +51,9 @@
     "nuxt": "^2.15.3",
     "vue": "2.6.12",
     "vue-server-renderer": "2.6.12",
-    "vue-template-compiler": "2.6.12"
+    "vue-template-compiler": "2.6.12",
+    "tailwindcss": "^2.2.7",
+    "@nuxtjs/tailwindcss": "^4.2.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -76,7 +78,6 @@
     "postcss": "^8.3.6",
     "prettier": "^2.2.1",
     "sass": "^1.19.0",
-    "sass-loader": "^10.1.1",
-    "tailwindcss": "^2.2.7"
+    "sass-loader": "^10.1.1"
   }
 }
