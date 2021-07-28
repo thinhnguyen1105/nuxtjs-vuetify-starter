@@ -32,7 +32,6 @@ const config: NuxtConfig = {
     '@/plugins/repository',
     {
       src: '@/plugins/design-system',
-      ssr: false,
     },
   ],
   components: true,

@@ -47,7 +47,7 @@
     "@nuxtjs/markdownit": "^1.2.10",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.8.1",
-    "izteach-design-system-3": "^1.0.0",
+    "izteach-design-system-3": "^1.0.1",
     "nuxt": "^2.15.3",
     "vue": "2.6.12",
     "vue-server-renderer": "2.6.12",
