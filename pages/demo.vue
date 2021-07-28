@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>{{ vendor ? vendor : 'Hello' }}</div>
-    <Heading level="h4">The quick brown fox</Heading>
+    <Dialog>The quick brown fox</Dialog>
     <v-app>
       <v-container>
         <v-row justify="space-around">
