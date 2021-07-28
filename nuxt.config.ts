@@ -38,7 +38,7 @@ const config: NuxtConfig = {
   buildModules: [
     // https://typescript.nuxtjs.org/guide/setup#configuration
     '@nuxt/typescript-build',
-    '@nuxtjs/vuetify',
+    // '@nuxtjs/vuetify',
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     // https://composition-api.nuxtjs.org
