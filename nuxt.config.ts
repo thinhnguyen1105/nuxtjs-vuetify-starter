@@ -43,7 +43,8 @@ const config: NuxtConfig = {
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     // https://composition-api.nuxtjs.org
-    '@nuxtjs/composition-api',
+    '@nuxtjs/composition-api/module',
+    '@nuxtjs/tailwindcss',
   ],
   modules: [
     // https://axios.nuxtjs.org

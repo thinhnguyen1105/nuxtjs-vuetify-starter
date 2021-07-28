@@ -1,6 +1,10 @@
 <template>
   <div>
     <div>{{ vendor ? vendor : 'Hello' }}</div>
+    <div>
+      <Dialog>123123</Dialog>
+    </div>
+
     <v-app>
       <v-container>
         <v-row justify="space-around">
