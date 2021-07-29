@@ -27,7 +27,7 @@ const config: NuxtConfig = {
     ],
   },
   // https://github.com/gothinkster/realworld-starter-kit
-  css: ['@/assets/main.css'],
+  css: ['@/assets/main.css', '@/assets/tailwind.css'],
   plugins: [
     '@/plugins/repository',
     {
