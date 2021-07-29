@@ -6719,10 +6719,10 @@ isobject@^3.0.0, isobject@^3.0.1:
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
   integrity sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
 
-izteach-design-system-3@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/izteach-design-system-3/-/izteach-design-system-3-1.0.3.tgz#014a22b3a9951d9c43e5d264e8e345a872a6bc53"
-  integrity sha512-ACCuov6fa27fBXu7vKQkhepb/HxWODV24KxSR62Ioc2MAQ03B7wxsxCaTGusKdiDxvrENe9cUkcSp1dNGycwJw==
+izteach-design-system-3@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/izteach-design-system-3/-/izteach-design-system-3-1.0.4.tgz#bdaa59333d8771723d9e8d15c4197a798521e720"
+  integrity sha512-/krD9l0nCKMnI+7MYKhkQKpGbSop2HB5uP6SiAu/yF9+hupDy2bsJQhoJSiFLxCFA1jm8EylARqDsNusi7B2/Q==
   dependencies:
     "@babel/polyfill" "^7.8.7"
     lodash "^4.17.21"

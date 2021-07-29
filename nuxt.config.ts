@@ -37,15 +37,12 @@ const config: NuxtConfig = {
     '@nuxtjs/composition-api/module',
     '@nuxtjs/tailwindcss',
   ],
-  modules: ['@nuxtjs/axios', '@nuxtjs/markdownit'],
+  modules: ['@nuxtjs/axios'],
   build: {
     extractCSS: !isDev,
   },
   axios: {
     baseURL: 'https://conduit.productionready.io/api/',
-  },
-  markdownit: {
-    injected: true,
   },
   typescript: {
     typeCheck: {
