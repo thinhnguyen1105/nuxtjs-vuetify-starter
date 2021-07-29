@@ -26,42 +26,27 @@ const config: NuxtConfig = {
       },
     ],
   },
-  // https://github.com/gothinkster/realworld-starter-kit
   css: ['@/assets/main.css', '@/assets/tailwind.css'],
-  plugins: [
-    '@/plugins/repository',
-    {
-      src: '@/plugins/design-system',
-    },
-  ],
+  plugins: ['@/plugins/repository', '@/plugins/design-system'],
   components: true,
   buildModules: [
-    // https://typescript.nuxtjs.org/guide/setup#configuration
     '@nuxt/typescript-build',
     // '@nuxtjs/vuetify',
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    // https://composition-api.nuxtjs.org
     '@nuxtjs/composition-api/module',
     '@nuxtjs/tailwindcss',
   ],
-  modules: [
-    // https://axios.nuxtjs.org
-    '@nuxtjs/axios',
-    // https://github.com/nuxt-community/community-modules/tree/master/packages/markdownit
-    '@nuxtjs/markdownit',
-  ],
+  modules: ['@nuxtjs/axios', '@nuxtjs/markdownit'],
   build: {
     extractCSS: !isDev,
   },
   axios: {
     baseURL: 'https://conduit.productionready.io/api/',
   },
-  // https://github.com/nuxt-community/modules/tree/master/packages/markdownit
   markdownit: {
     injected: true,
   },
-  // https://typescript.nuxtjs.org/guide/lint.html#runtime-lint
   typescript: {
     typeCheck: {
       eslint: {

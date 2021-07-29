@@ -7,6 +7,15 @@
       Button
     </button>
     <Dialog>The quick brown fox</Dialog>
+    <NavBar
+      active="Dashboard"
+      :nav-items="[
+        { name: 'Dashboard', component: 'Dashboard', href: '/example/' },
+        { name: 'Posts', component: 'Posts', href: '/example/' },
+        { name: 'Users', component: 'Users', href: '/example/' },
+        { name: 'Settings', component: 'Settings', href: '/example/' },
+      ]"
+    />
   </div>
 </template>
 
