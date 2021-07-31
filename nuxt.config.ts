@@ -51,6 +51,11 @@ const config: NuxtConfig = {
       },
     },
   },
+  publicRuntimeConfig: {
+    izteachV1URL: process.env[`API_IZTEACH_V1${isDev ? '_DEV' : ''}`],
+    vendorURL: process.env[`API_VENDOR${isDev ? '_DEV' : ''}`],
+  },
+  privateRuntimeConfig: {},
 }
 
 export default config

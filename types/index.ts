@@ -1,3 +1,7 @@
+export interface Vendor {
+  vendorId: string
+  clientId: string
+}
 export interface User {
   email: string
   token: string

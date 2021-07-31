@@ -42,11 +42,14 @@ import {
   toRef,
   toRefs,
 } from '@nuxtjs/composition-api'
-
+import FormContainer from '@/components/common/FormContainer.vue'
 import { useError, useUser } from '@/compositions'
 
 export default defineComponent({
   name: 'RegisterPage',
+  components: {
+    FormContainer,
+  },
   setup() {
     const { redirect } = useContext()
     const { state: errorState, setError } = useError()

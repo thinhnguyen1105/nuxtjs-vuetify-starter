@@ -5,11 +5,13 @@ import {
   profileRepository,
   tagRepository,
   userRepository,
+  vendorRepository,
   ArticleRepository,
   CommentRepository,
   ProfileRepository,
   TagRepository,
   UserRepository,
+  VendorRepository,
 } from '@/api'
 import { ErrorType } from '@/constants'
 
@@ -19,13 +21,18 @@ export type Repository = {
   profile: ProfileRepository
   tag: TagRepository
   user: UserRepository
+  vendor: VendorRepository
 }
 
 /**
  * @see https://axios.nuxtjs.org
- * @see https://github.com/gothinkster/realworld/tree/3155494efe68432772157de38a90c49b3698897f/api
  */
-const createRepository = ({ app, $axios, redirect }: Context): Repository => {
+const createRepository = ({
+  app,
+  $axios,
+  redirect,
+  $config,
+}: Context): Repository => {
   $axios.onError((error) => {
     if (!error.response) {
       return
@@ -60,6 +67,7 @@ const createRepository = ({ app, $axios, redirect }: Context): Repository => {
     profile: profileRepository($axios),
     tag: tagRepository($axios),
     user: userRepository($axios),
+    vendor: vendorRepository($axios, $config),
   }
 }
 

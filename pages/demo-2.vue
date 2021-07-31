@@ -1,52 +1,28 @@
 <template>
   <div>
-    <div>{{ name ? name : 'Hello' }}</div>
+    <div>{{ vendor ? vendor : 'Hello' }}</div>
   </div>
 </template>
 
 <script lang="ts">
+import { useVendor } from '@/compositions'
 import {
   defineComponent,
   useContext,
-  ref,
-  useMeta,
   useFetch,
+  toRef,
 } from '@nuxtjs/composition-api'
-import axios from 'axios'
 
 export default defineComponent({
   name: 'Demopage',
   setup() {
+    const { state: vendorState, getVendorFromHostname } = useVendor()
     const context = useContext()
-    const host = context.ssrContext?.req.headers.host
-    const name = ref()
-    const vendorSetting = ref()
-    const { title, meta } = useMeta()
+    const host = context.ssrContext?.req.headers.host || ''
     useFetch(async () => {
-      const result = await axios.get(
-        `https://cd30nboy73.execute-api.ap-southeast-1.amazonaws.com/prod/vendor/get-vendor-from-origin?hostname=https://${host}`
-      )
-      const vendor = result.data
-      const settings = await axios.get(
-        `https://ilx0gvnp3c.execute-api.ap-southeast-1.amazonaws.com/prod/academic/vendor/${vendor.vendorId}`,
-        {
-          headers: {
-            'ol-client-id': vendor.clientId,
-            'ol-vendor-id': vendor.vendorId,
-          },
-        }
-      )
-      vendorSetting.value = settings.data.item.contact.name
-      name.value = vendor
-
-      title.value = vendorSetting.value
-      meta.value.push({
-        hid: 'ogTitle',
-        name: 'og:title',
-        content: vendorSetting.value,
-      })
+      await getVendorFromHostname(host)
     })
-    return { name, vendorSetting }
+    return { vendor: toRef(vendorState, 'vendor') }
   },
   head: {},
 })

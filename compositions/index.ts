@@ -9,6 +9,7 @@ import useProfileUser from './useProfileUser'
 import useTag from './useTag'
 import useUser from './useUser'
 import useUtils from './useUtils'
+import useVendor from './useVendor'
 
 export {
   useArticleSlug,
@@ -22,4 +23,5 @@ export {
   useTag,
   useUser,
   useUtils,
+  useVendor,
 }
