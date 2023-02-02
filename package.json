@@ -7,6 +7,9 @@
     "email": "devjang2016@gmail.com",
     "url": "https://devjang.github.io"
   },
+  "engines": {
+    "node": "16"
+  },
   "homepage": "https://nuxt-realworld.vercel.app",
   "description": "Built a Example App of RealWorld with Nuxt & Composition API",
   "license": "MIT",
